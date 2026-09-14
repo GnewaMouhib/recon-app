@@ -127,9 +127,10 @@ Ne propose aucune exploitation offensive.
         }), 500
 
 if __name__ == "__main__":
+    host = os.getenv("FLASK_HOST", "127.0.0.1")
     port = int(os.getenv("FLASK_PORT", 8088))
     app.run(
-        host="0.0.0.0",
+        host=host,
         port=port,
         debug=False
     )
